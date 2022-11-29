@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { Box, Flex, Center, Heading } from '@chakra-ui/react';
-import { ServiceLayout } from '@/component/service_layout';
-import { GoogleLoginButton } from '@/component/google_login_button';
+import { ServiceLayout } from '@/components/service_layout';
+import { GoogleLoginButton } from '@/components/google_login_button';
 import { useAuth } from '@/contexts/auth_user.context';
 
 const IndexPage: NextPage = function () {
