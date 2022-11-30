@@ -17,7 +17,14 @@ const GNB = function () {
     </Button>
   );
   const logOutBtn = (
-    <Button as="a" fontWeight={400} variant="link" onClick={signOut}>
+    <Button
+      fontSize="sm"
+      fontWeight={600}
+      color="white"
+      bg="orange.300"
+      _hover={{ bg: 'orange.200' }}
+      onClick={signOut}
+    >
       로그아웃
     </Button>
   );
