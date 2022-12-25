@@ -1,6 +1,5 @@
 import { GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
 import { useEffect, useState } from 'react';
-import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event';
 import FirebaseClient from '@/models/firebase_client';
 import { InAuthUser } from '../models/in_auth_user';
 
