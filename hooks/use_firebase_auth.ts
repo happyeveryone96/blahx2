@@ -41,6 +41,7 @@ export default function useFirebaseAuth() {
   const clear = () => {
     setAuthUser(null);
     setLoading(true);
+    router.push('/');
   };
 
   const signOut = () => FirebaseClient.getInstance().Auth.signOut().then(clear);
