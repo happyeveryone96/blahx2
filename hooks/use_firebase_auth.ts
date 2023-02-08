@@ -1,11 +1,14 @@
 import { GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import FirebaseClient from '@/models/firebase_client';
 import { InAuthUser } from '../models/in_auth_user';
 
 export default function useFirebaseAuth() {
   const [authUser, setAuthUser] = useState<InAuthUser | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
 
   async function signInWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();
@@ -28,6 +31,8 @@ export default function useFirebaseAuth() {
         console.info({ status: resp.status });
         const respData = await resp.json();
         console.info(respData);
+        const id = signInResult.user.email?.split('@')[0];
+        router.push(`/${id}`);
       }
     } catch (err) {
       console.error(err);
@@ -67,4 +72,7 @@ export default function useFirebaseAuth() {
     signInWithGoogle,
     signOut,
   };
+}
+function useNavigate() {
+  throw new Error('Function not implemented.');
 }
